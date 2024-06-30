@@ -1,15 +1,15 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-class PlayerTest {
+public class PlayerTest {
 
-    @BeforeEach
-    void setUp() {
-    }
+    @Test
+    public void testGetMarker() {
+        Player player = new Player('X');
+        assertEquals('X', player.getMarker());
 
-    @AfterEach
-    void tearDown() {
+        Player player2 = new Player('O');
+        assertEquals('O', player2.getMarker());
     }
 }

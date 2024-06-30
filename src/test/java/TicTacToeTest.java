@@ -1,15 +1,22 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-class TicTacToeTest {
+public class TicTacToeTest {
+    private TicTacToe game;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
+        game = new TicTacToe();
     }
 
-    @AfterEach
-    void tearDown() {
+    @Test
+    public void testSwitchCurrentPlayer() {
+        assertEquals('X', game.currentPlayer.getMarker());
+        game.switchCurrentPlayer();
+        assertEquals('O', game.currentPlayer.getMarker());
+        game.switchCurrentPlayer();
+        assertEquals('X', game.currentPlayer.getMarker());
     }
 }
